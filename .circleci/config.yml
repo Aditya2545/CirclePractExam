@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         auth:
-          username: Aditya2545
-          password: Asdfghqwer@456 
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD 
     steps:
       - checkout
       - run: echo "this is the test1 job"
@@ -13,8 +13,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         auth:
-          username: Aditya2545
-          password: Asdfghqwer@456
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: echo "this is the test2 job"

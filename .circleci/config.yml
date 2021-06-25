@@ -1,0 +1,28 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  test1:
+    docker:
+      - image: circleci/ruby:2.4.1
+        auth:
+          username: aditya70
+          password: Class12345
+    steps:
+      - checkout
+      - run: echo "this is the build job"
+  test2:
+    docker:
+      - image: circleci/ruby:2.4.1
+        auth:
+          username: aditya70
+          password: Class12345
+    steps:
+      - checkout
+      - run: echo "this is the test job"
+
+workflows:
+  test1_and_test2:
+    jobs:
+      - test1
+      - test2

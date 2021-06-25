@@ -6,20 +6,20 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         auth:
-          username: aditya70
-          password: Class12345
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: echo "this is the build job"
+      - run: echo "this is the test1 job"
   test2:
     docker:
       - image: circleci/ruby:2.4.1
         auth:
-          username: aditya70
-          password: Class12345
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: echo "this is the test job"
+      - run: echo "this is the test2 job"
 
 workflows:
   test1_and_test2:
